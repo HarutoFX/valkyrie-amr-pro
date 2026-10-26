@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+}
+
+/* ─── Design Tokens (Refined Valkyrie AMR Pro Palette) ──────────────────────── */
+
+:root {
+  /* Canonical Design System */
+  --color-carbon-black: #0A0C0F;
+  --color-gunmetal: #282E35;
+  --color-titanium: #82909C;
+  --color-titanium-silver: #C1CAD2;
+  --color-soft-white: #F4F6F8;
+  --color-muted-grey: #929DA8;
+
+  /* Semantic Aliases */
+  --color-surface-base: #0A0C0F;
+  --color-surface-card: rgba(40, 46, 53, 0.75);
+  --color-surface-card-hover: rgba(40, 46, 53, 0.95);
+  --color-border: rgba(130, 144, 156, 0.2);
+  --color-border-accent: rgba(193, 202, 210, 0.45);
+
+  --color-primary-button: #C1CAD2;
+  --color-primary-button-hover: #F4F6F8;
+  --color-primary-text: #F4F6F8;
+  --color-secondary-text: #82909C;
+  --color-muted-text: #929DA8;
+
+  /* Typography */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+  --font-mono: var(--font-roboto-mono), "Courier New", monospace;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-base);
+  color: var(--color-soft-white);
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+/* ─── Scrollbar Styling ──────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0C0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(130, 144, 156, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(193, 202, 210, 0.6);
+}
+
+/* Hide scrollbar for spec bar */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────────── */
+
+::selection {
+  background: rgba(193, 202, 210, 0.3);
+  color: #F4F6F8;
+}
+
+/* ─── Canvas Utilities ───────────────────────────────────────────────────────── */
+
+canvas {
+  display: block;
+}
+
+/* ─── Focus Styles ───────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-titanium-silver);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Cursor Behavior ───────────────────────────────────────────────────────── */
+
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  cursor: text !important;
+}
